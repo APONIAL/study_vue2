@@ -1,0 +1,22 @@
+*{
+    margin: 20px;
+
+}
+.box1{
+     padding: 8px;
+     background: skyblue;
+ }
+.box2{
+    padding: 8px;
+    background: coral;
+}
+.list{
+    width: 200px;
+    height: 200px;
+    background: coral;
+    /*防止子元素溢出*/
+    overflow: auto;
+}
+.list li{
+    height: 100px;
+}
