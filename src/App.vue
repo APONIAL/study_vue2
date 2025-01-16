@@ -3,6 +3,8 @@
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">chapter1</router-link>
+      <router-link to="/chapter2">chapter2</router-link>
+      <router-link to="/chapter3">chapter3</router-link>
     </nav>
     <router-view/>
   </div>
