@@ -26,3 +26,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 <br/>
 chapter1 为vue中数据代理与事件处理 <br>
 chapter2 为vue中计算属性与侦听器 <br>
+chapter3 为vue中样式绑定和渲染，Vue监视数据和数组变化 p7.1-7.12 <br>
