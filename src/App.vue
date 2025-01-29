@@ -5,6 +5,7 @@
       <router-link to="/about">chapter1</router-link>
       <router-link to="/chapter2">chapter2</router-link>
       <router-link to="/chapter3">chapter3</router-link>
+      <router-link to="/chapter4">chapter4</router-link>
     </nav>
     <router-view/>
   </div>

@@ -1,4 +1,4 @@
-<template>
+<template >
   <div class="home">
     <HelloWorld msg="hello word"/>
   </div>
