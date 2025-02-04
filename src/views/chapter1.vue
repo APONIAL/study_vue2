@@ -46,6 +46,7 @@
 <script>
 
 export default {
+  name: 'chapter1',
   data() {
     return {
       message: 'dongtaotao',

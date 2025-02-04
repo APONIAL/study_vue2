@@ -2,35 +2,26 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import filters from "../utils/filters";
 import dayjs  from "dayjs";
 import '../public/gobal.css'
-
+import Student from "@/components/Student";
+import plugins from "@/plugins";
+//使用插件
+Vue.use(plugins,1,2,3)
 
 Vue.config.productionTip = false
-Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
-Vue.directive('fbind', {
-  //指令绑定到元素上
-  bind(el, binding) {
-    el.value = binding.value
-  },
-  //当元素插入到DOM中时调用
-  inserted(el, binding) {
-    el.focus()
-  },
-  update(el, binding) {
-    el.value = binding.value
-  }
-})
-Vue.directive('big',function big(el, binding) {
-  el.style.fontSize = `${binding.value}px`
-  el.innerHTML = binding.value * 10
-},)
 
+
+//注册全局组件
+Vue.component('Student',Student)
+Vue.prototype.x = 99
 const vm = new Vue({
   router,
   store,
+  //功能：将app组件放入容器中
   render: h => h(App)
+  // render(CreateElement){
+  //   return CreateElement('h1','helloworld')
+  // }
 }).$mount('#app')
+

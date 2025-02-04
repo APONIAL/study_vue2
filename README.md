@@ -26,6 +26,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 <br/>
 chapter1 为vue中数据代理与事件处理 <br>
 chapter2 为vue中计算属性与侦听器 <br>
-chapter3 为vue中样式绑定和渲染，Vue监视数据和数组变化 p7.1-7.12 <br>
-chapter4 为vue中样式绑定和渲染，Vue监视数据和数组变化 p7.1-7.12 <br>
-chapter5 为vue中表单收集，过滤器，内置指令，自定义指令，声明周期钩子 p8-p10
+chapter3 为vue中样式绑定和渲染，Vue监视数据和数组变化 (1.)p7.1——7.12 <br>
+chapter4 为vue中表单收集，过滤器，内置指令，自定义指令，声明周期钩子 (1.)p8——(1.)p10 <br>
+chapter5 为vue中组件化开发，vue原型，组件的嵌套，组件的复用，cli与项目结构，组件的props和ref，插件 (2.)p*——(3.)p6 <br>
+
