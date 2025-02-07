@@ -29,12 +29,11 @@ export default {
         completed:false
       }
         //通知父组件添加一个todo对象
-        this.addTodo(todoObj)
+        this.$emit('addTodo',todoObj)
         //输入框清空
         this.title = ''
     }
   },
-  props:['addTodo']
 
 }
 </script>

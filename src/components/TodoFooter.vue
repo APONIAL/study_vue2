@@ -18,7 +18,7 @@
 
 export default {
   name: "TodoFooter",
-  props: ['todos','checkAllTodo','handleClear'],
+  props: ['todos'],
   computed: {
     isAll:{
       get() {
@@ -28,7 +28,8 @@ export default {
       // value是修改后的值
       set(value) {
           // console.log(newValue) true || false
-        this.checkAllTodo(value)
+        // this.checkAllTodo(value)
+        this.$emit('checkAllTodo', value)
       }
     },
     total() {
@@ -49,11 +50,19 @@ export default {
     }
   },
   methods: {
-  /*  handleCheckAll(e) {
+   /* handleCheckAll(e) {
       //获取勾选状态
       // console.log(e.target.checked)
       this.checkAllTodo(e.target.checked)
     }*/
+    //清除已经完成的
+    handleClear(){
+      if (confirm('确定清除已完成任务吗？')) {
+        //过滤掉不想要的
+        //filter不改变数组，要重新赋值
+        this.$emit('handleClear')
+      }
+    }
   }
 
 }

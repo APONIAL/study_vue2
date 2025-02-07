@@ -3,12 +3,12 @@
     <div class="todo-container">
       <div class="todo-wrap">
         <!--        将函数addTodo传递给子组件TodoHeader-->
-        <todo-header :addTodo="addTodo"/>
+        <todo-header @addTodo="addTodo"/>
         <todo-list :todos="todos" :checkTodo="checkTodo" :delTodo="delTodo"/>
         <todo-footer
             :todos="todos"
-            :checkAllTodo = "checkAllTodo"
-            :handleClear = "handleClear"
+            @checkAllTodo="checkAllTodo"
+            @handleClear="handleClear"
         />
       </div>
     </div>
@@ -24,7 +24,9 @@ export default {
   name: "TodoContainer",
   data() {
     return {
-      todos: [
+      //  初始化时先读取本地存储的todos
+      //  || [] 为了防止组件使用todos.length报错
+      todos: JSON.parse(localStorage.getItem('todos')) || [
         {id: '001', title: '吃饭', completed: true},
         {id: '002', title: '学习', completed: false},
         {id: '003', title: '睡觉', completed: true}
@@ -49,19 +51,31 @@ export default {
       //filter不改变数组，要重新赋值
       this.todos = this.todos.filter(item => item.id !== id)
     },
-  // 全选or取消全选
+    // 全选or取消全选
     checkAllTodo(flag) {
       this.todos.forEach(item => {
         item.completed = flag
       })
     },
     //清空已经完成的todo
-    handleClear(){
+    handleClear() {
       if (confirm('确定清除已完成任务吗？')) {
         this.todos = this.todos.filter(item => !item.completed)
       }
     }
   },
+  watch: {
+    //监听todos的变化
+    //todo发生变化，value就是最新的todos
+    todos: {
+      deep: true,
+      handler(newValue) {
+        //将todos存储到本地
+        localStorage.setItem('todos', JSON.stringify(newValue))
+      }
+    }
+  },
+
   components: {
     TodoHeader,
     TodoList,
