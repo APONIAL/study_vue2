@@ -22,7 +22,7 @@
     <ul>
       <!-- :key="item.id" -> 主要是为了 diff 算法，尽量减少重新渲染的次数-->
       <!-- <li v-for="p in persons" :key="p.id">{{ p.name }}-{{ p.age }}</li>-->
-      <li v-for="(p,index) of persons" key="p.id">{{ p }} --- {{ index }}</li>
+      <li v-for="(p,index) of persons" :key="'p1'+p.id">{{ p }} --- {{ index }}</li>
       <!--      遍历对象-->
       <li v-for="(value,key) of cars" :key="key">{{ key }} ： {{ value }}</li>
       <!--      遍历字符串-->

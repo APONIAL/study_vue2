@@ -26,7 +26,7 @@ export default {
       const todoObj = {
         id:nanoid(),
         title:this.title,
-        completed:false
+        completed:false,
       }
         //通知父组件添加一个todo对象
         this.$emit('addTodo',todoObj)
@@ -41,7 +41,7 @@ export default {
 <style scoped>
 /*header*/
 *{
-  margin: 0px;
+  margin: 0;
 }
 .todo-header input {
   width: 560px;

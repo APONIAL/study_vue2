@@ -38,6 +38,7 @@ export default {
   padding: 0;
 }
 
+/*
 .todo-empty {
   height: 40px;
   line-height: 40px;
@@ -46,6 +47,7 @@ export default {
   padding-left: 5px;
   margin-top: 10px;
 }
+*/
 
 
 </style>

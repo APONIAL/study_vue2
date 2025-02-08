@@ -6,10 +6,12 @@
     <button @click="unbind">解绑custom-event事件</button>
     <button @click="death">销毁当前student组件实例对象(vc)</button>
     <button @click="sendStudentNameToBrother">把学生姓名通过事件总线传给兄弟组件</button>
+    <button @click="sendStudentNameToBrotherByPubSub">把学生姓名通过pubSub传给兄弟组件</button>
   </div>
 </template>
 
 <script>
+import PubSub from 'pubsub-js'
 export default {
   name: "CustomStudent",
   data() {
@@ -41,6 +43,9 @@ export default {
     },
     sendStudentNameToBrother(){
         this.$globalEventBus.$emit('get-student-name',this.studentName)
+    },
+    sendStudentNameToBrotherByPubSub(){
+        PubSub.publish('get-student-name-pubSub',this.studentName)
     }
   }
 

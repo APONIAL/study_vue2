@@ -2,9 +2,9 @@
   <div id="root1">
     <div class="todo-container">
       <div class="todo-wrap">
-        <!--        将函数addTodo传递给子组件TodoHeader-->
+        <!--将函数addTodo传递给子组件TodoHeader-->
         <todo-header @addTodo="addTodo"/>
-        <todo-list :todos="todos" />
+        <todo-list :todos="todos"/>
         <todo-footer
             :todos="todos"
             @checkAllTodo="checkAllTodo"
@@ -27,9 +27,9 @@ export default {
       //  初始化时先读取本地存储的todos
       //  || [] 为了防止组件使用todos.length报错
       todos: JSON.parse(localStorage.getItem('todos')) || [
-        {id: '001', title: '吃饭', completed: true},
-        {id: '002', title: '学习', completed: false},
-        {id: '003', title: '睡觉', completed: true}
+        {id: '001', title: '吃饭', completed: true,},
+        {id: '002', title: '学习', completed: false,},
+        {id: '003', title: '睡觉', completed: true,}
       ]
     }
   },
@@ -62,6 +62,14 @@ export default {
       if (confirm('确定清除已完成任务吗？')) {
         this.todos = this.todos.filter(item => !item.completed)
       }
+    },
+    //更新一个todo
+    updateTodo(id, title) {
+      this.todos.forEach(item => {
+        if (item.id === id) {
+          item.title = title
+        }
+      })
     }
   },
   watch: {
@@ -76,12 +84,14 @@ export default {
     }
   },
   mounted() {
-    this.$globalEventBus.$on('check-to-do', this.checkTodo)
-    this.$globalEventBus.$on('del-to-do', this.delTodo)
+    this.$globalEventBus.$on('check-todo', this.checkTodo)
+    this.$globalEventBus.$on('del-todo', this.delTodo)
+    this.$globalEventBus.$on('update-todo', this.updateTodo)
   },
   beforeDestroy() {
-    this.$globalEventBus.$off('check-to-do')
-    this.$globalEventBus.$off('del-to-do')
+    this.$globalEventBus.$off('check-todo')
+    this.$globalEventBus.$off('del-todo')
+    this.$globalEventBus.$off('update-todo')
   },
   components: {
     TodoHeader,
