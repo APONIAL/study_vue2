@@ -10,7 +10,9 @@
 <!--   <CustomStudent v-on:custom-event="getStudentName" @demo="m1"/>-->
     <!--另一种方式 通过this.$refs.student获取子组件实例对象student，
           再通过student.getStudentName()调用-->
-    <CustomStudent ref="student" @click.native="show"/>
+<!--    传递原生click事件-->
+<!--    <CustomStudent ref="student" @click.native="show"/>-->
+    <CustomStudent ref="student"/>
   </div>
 </template>
 

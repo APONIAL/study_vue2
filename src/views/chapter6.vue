@@ -16,11 +16,12 @@
     </div>
 
     <hr/>
-    <!--   自定义事件-->
+    <!--   自定义事件和事件总线-->
     <div>
-      <h2>自定义事件</h2>
+      <h2>自定义事件和事件总线</h2>
       <parent/>
     </div>
+    <hr/>
   </div>
 </template>
 
@@ -35,7 +36,7 @@ export default {
   },
   components: {
     TodoContainer,
-    Parent
+    Parent,
   },
   methods: {
     saveData() {

@@ -14,16 +14,16 @@
 <script>
 export default {
   name: "TodoItem",
-  props: ['todo', 'checkTodo', 'delTodo'],
+  props: ['todo'],
   methods: {
     handleCheck(id) {
       //通知TodoContainer(父组件的父组件)组件将对应的todo对象的
       //completed属性值取反
-      this.checkTodo(id)
+      this.$globalEventBus.$emit('check-to-do', id)
     },
     handleDelete(id) {
       if (confirm('确定删除吗？')) {
-        this.delTodo(id)
+       this.$globalEventBus.$emit('del-to-do', id)
       }
     }
   },
@@ -33,7 +33,7 @@ export default {
 <style src="../assets/button.css" scoped></style>
 <style scoped>
 * {
-  margin: 0px;
+  margin: 0;
 }
 
 .ml5 {

@@ -4,8 +4,6 @@
        v-for="todoObj in todos"
        :key="todoObj.id"
        :todo="todoObj"
-       :checkTodo="checkTodo"
-       :delTodo = "delTodo"
    />
 
   </ul>
@@ -15,7 +13,7 @@
 import TodoItem from "@/components/TodoItem";
 export default {
   name: "TodoList",
-  props:['todos','checkTodo','delTodo'],
+  props:['todos'],
   data(){
     return{
 
@@ -30,14 +28,14 @@ export default {
 
 <style scoped>
 *{
-  margin: 0px;
+  margin: 0;
 }
 /*main*/
 .todo-main {
-  margin-left: 0px;
+  margin-left: 0;
   border: 1px solid #ddd;
   border-radius: 2px;
-  padding: 0px;
+  padding: 0;
 }
 
 .todo-empty {

@@ -4,7 +4,7 @@
       <div class="todo-wrap">
         <!--        将函数addTodo传递给子组件TodoHeader-->
         <todo-header @addTodo="addTodo"/>
-        <todo-list :todos="todos" :checkTodo="checkTodo" :delTodo="delTodo"/>
+        <todo-list :todos="todos" />
         <todo-footer
             :todos="todos"
             @checkAllTodo="checkAllTodo"
@@ -75,7 +75,14 @@ export default {
       }
     }
   },
-
+  mounted() {
+    this.$globalEventBus.$on('check-to-do', this.checkTodo)
+    this.$globalEventBus.$on('del-to-do', this.delTodo)
+  },
+  beforeDestroy() {
+    this.$globalEventBus.$off('check-to-do')
+    this.$globalEventBus.$off('del-to-do')
+  },
   components: {
     TodoHeader,
     TodoList,

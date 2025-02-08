@@ -5,6 +5,7 @@
     <button @click="sendStudentName">把学生名称传给父组件</button>
     <button @click="unbind">解绑custom-event事件</button>
     <button @click="death">销毁当前student组件实例对象(vc)</button>
+    <button @click="sendStudentNameToBrother">把学生姓名通过事件总线传给兄弟组件</button>
   </div>
 </template>
 
@@ -37,6 +38,9 @@ export default {
       //销毁后所有Student实例的自定义事件不奏效
       //原生dom事件不受影响
       this.$destroy()
+    },
+    sendStudentNameToBrother(){
+        this.$globalEventBus.$emit('get-student-name',this.studentName)
     }
   }
 

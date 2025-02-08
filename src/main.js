@@ -10,18 +10,19 @@ import plugins from "@/plugins";
 Vue.use(plugins,1,2,3)
 
 Vue.config.productionTip = false
-
-
 //注册全局组件
 Vue.component('Student',Student)
 Vue.prototype.x = 99
-const vm = new Vue({
+new Vue({
   router,
   store,
   //功能：将app组件放入容器中
-  render: h => h(App)
+  render: h => h(App),
   // render(CreateElement){
   //   return CreateElement('h1','helloworld')
   // }
+  beforeCreate() {
+    Vue.prototype.$globalEventBus = this
+  }
 }).$mount('#app')
 
