@@ -1,15 +1,22 @@
 <template>
   <ul class="todo-main">
-   <TodoItem
-       v-for="todoObj in todos"
-       :key="todoObj.id"
-       :todo="todoObj"
-   />
-
+    <transition-group
+        appear
+        name="animate__animated animate__bounce"
+        enter-active-class="animate__backInLeft"
+        leave-active-class="animate__backOutRight"
+    >
+      <TodoItem
+          v-for="todoObj in todos"
+          :key="todoObj.id"
+          :todo="todoObj"
+      />
+    </transition-group>
   </ul>
 </template>
 
 <script>
+import 'animate.css';
 import TodoItem from "@/components/TodoItem";
 export default {
   name: "TodoList",

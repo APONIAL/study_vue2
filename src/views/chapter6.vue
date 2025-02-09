@@ -22,17 +22,39 @@
       <parent/>
     </div>
     <hr/>
+<!--    过渡与动画-->
+      <div>
+        <h2>过渡与动画</h2>
+        <button @click="isShow = !isShow">显示/隐藏</button>
+<!--        <transition-group name="tao" appear>-->
+<!--          <h1 v-show="isShow" :key="1">你好啊！</h1>-->
+<!--          <h1 v-show="isShow" :key="2">你好啊！</h1>-->
+<!--        </transition-group>-->
+        <p>使用animate.css</p>
+        <transition-group
+            appear
+            name="animate__animated animate__bounce"
+            enter-active-class="animate__swing"
+            leave-active-class="animate__bounceOutUp"
+        >
+          <h1 v-show="isShow" :key="3">你好啊！</h1>
+          <h1 v-show="isShow" :key="4">你好啊！</h1>
+        </transition-group>
+
+      </div>
   </div>
 </template>
 
 <script>
 import TodoContainer from "@/components/TodoContainer";
 import Parent from "@/components/CustomParent";
-
+import 'animate.css'
 export default {
   name: "chapter6",
   data() {
-    return {}
+    return {
+      isShow: true
+    }
   },
   components: {
     TodoContainer,
@@ -62,5 +84,21 @@ export default {
 </script>
 
 <style scoped>
+h1{
+  background: orange;
+}
+/*进入起点,离开的终点*/
+.tao-enter,.tao-leave-to{
+  transform: translateX(-100%);
+}
+.tao-enter-active,.tao-leave-active{
+  transition:  0.5s linear;
+}
+/*进入终点，离开的起点*/
+.tao-enter-to,.tao-leave{
+  transform: translateX(0);
+}
+
+
 
 </style>
