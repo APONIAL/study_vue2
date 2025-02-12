@@ -2,12 +2,15 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">chapter1</router-link>
-      <router-link to="/chapter2">chapter2</router-link>
-      <router-link to="/chapter3">chapter3</router-link>
-      <router-link to="/chapter4">chapter4</router-link>
-      <router-link to="/chapter5">chapter5</router-link>
-      <router-link to="/chapter6">chapter6</router-link>
+        <router-link to="/about">chapter1</router-link>
+        <router-link to="/chapter2">chapter2</router-link>
+        <router-link to="/chapter3">chapter3</router-link>
+        <router-link to="/chapter4">chapter4</router-link>
+        <router-link to="/chapter5">chapter5</router-link>
+        <router-link to="/chapter6">chapter6</router-link>
+        <div style="margin-top: 20px">
+          <router-link to="/chapter7">chapter7</router-link>
+        </div>
     </nav>
     <router-view/>
   </div>
@@ -24,6 +27,7 @@
 
 nav {
   padding: 30px;
+  font-size: large;
 }
 
 nav a {

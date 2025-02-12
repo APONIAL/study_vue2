@@ -30,4 +30,5 @@ chapter3 为vue中样式绑定和渲染，Vue监视数据和数组变化 (1.)p7.
 chapter4 为vue中表单收集，过滤器，内置指令，自定义指令，声明周期钩子 (1.)p8——(1.)p10 <br>
 chapter5 为vue中组件化开发，vue原型，组件的嵌套，组件的复用，cli与项目结构，组件的props和ref，插件 (2.)p*——(3.)p6 <br>
 chapter6 todoList案例，浏览器本地存储，组件自定义事件，全局事件总线，消息订阅与发布，过渡与动画 (3.)p7-p12<br>
+chapter7 vue中ajax，githubUserSearch 案例，slot插槽 (4.)p*<br>
 
