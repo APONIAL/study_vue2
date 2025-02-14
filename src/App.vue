@@ -10,6 +10,7 @@
         <router-link to="/chapter6">chapter6</router-link>
         <div style="margin-top: 20px">
           <router-link to="/chapter7">chapter7</router-link>
+          <router-link to="/chapter8">chapter8</router-link>
         </div>
     </nav>
     <router-view/>

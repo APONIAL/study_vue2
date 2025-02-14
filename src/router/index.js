@@ -47,7 +47,13 @@ const routes = [
     path: '/chapter7',
     name: 'chapter7',
     component: () => import('@/views/chapter7.vue')
+  },
+  {
+    path: '/chapter8',
+    name: 'chapter8',
+    component: () => import('@/views/chapter8.vue')
   }
+
 ]
 
 const router = new VueRouter({
