@@ -11,11 +11,14 @@
         <div style="margin-top: 20px">
           <router-link to="/chapter7">chapter7</router-link>
           <router-link to="/chapter8">chapter8</router-link>
+          <router-link to="/chapter9">chapter9</router-link>
         </div>
     </nav>
     <router-view/>
   </div>
 </template>
+
+
 
 <style>
 #app {
@@ -24,6 +27,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
 }
 
 nav {
